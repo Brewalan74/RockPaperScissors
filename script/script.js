@@ -18,8 +18,8 @@ function randomComputer() {
   ];
 } // Function for random choice
 
-// function computerPlay() {
-//   let computerSelect = randomComputer;
+// function computerSelect(comp) {
+//   comp = randomComputer();
 // }
 
 // function playerSelect(x) {
@@ -27,39 +27,33 @@ function randomComputer() {
 //   return x.toLowerCase();
 // }
 
-function playRound(computerSelect, playerSelect) {
-  function computerSelect(comp) {
-    comp = randomComputer();
-  }
-  function playerSelect(x) {
+function playRound(playerSelect, computerSelect) {
+  const playerSelect = (x) => {
     x = prompt("What is your choice?");
     return x.toLowerCase();
-  }
+  };
+  const computerSelect = (comp) => {
+    comp = randomComputer();
+    return comp;
+  };
   if (computerSelect === "rock" && playerSelect === "rock") {
     return "its a draw!";
-  }
-  if (computerSelect === "paper" && playerSelect === "paper") {
+  } else if (computerSelect === "paper" && playerSelect === "paper") {
     return "its a draw!";
-  }
-  if (computerSelect === "scissors" && playerSelect === "scissors") {
+  } else if (computerSelect === "scissors" && playerSelect === "scissors") {
     return "its a draw!";
-  }
-  if (computerSelect === "rock" && playerSelect === "paper") {
+  } else if (computerSelect === "rock" && playerSelect === "paper") {
     return "you win, paper beats rock!";
-  }
-  if (computerSelect === "rock" && playerSelect === "scissors") {
+  } else if (computerSelect === "rock" && playerSelect === "scissors") {
     return "you lose, rock beats scissors!";
-  }
-  if (computerSelect === "paper" && playerSelect === "rock") {
+  } else if (computerSelect === "paper" && playerSelect === "rock") {
     return "you lose, paper beats rock!";
-  }
-  if (computerSelect === "paper" && playerSelect === "scissors") {
+  } else if (computerSelect === "paper" && playerSelect === "scissors") {
     return "you win, scissors beats paper!";
-  }
-  if (computerSelect === "scissors" && playerSelect === "rock") {
+  } else if (computerSelect === "scissors" && playerSelect === "rock") {
     return "you win, rock beats scissors!";
-  }
-  if (computerSelect === "scissors" && playerSelect === "paper") {
+  } else if (computerSelect === "scissors" && playerSelect === "paper") {
     return "you lose, scissors beats paper!";
   }
+  return;
 }
