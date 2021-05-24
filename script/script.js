@@ -13,29 +13,14 @@ then return message :
 
 function randomComputer() {
   const rockPaperScissors = ["rock", "paper", "scissors"];
-  return rockPaperScissors[
-    Math.floor(Math.random() * rockPaperScissors.length)
-  ];
+  return rockPaperScissors[Math.floor(Math.random() * 3)];
 } // Function for random choice
 
-// function computerSelect(comp) {
-//   comp = randomComputer();
-// }
+const computerSelect = randomComputer();
 
-// function playerSelect(x) {
-//   x = prompt("What is your choice?");
-//   return x.toLowerCase();
-// }
+const playerSelect = randomComputer();
 
 function playRound(playerSelect, computerSelect) {
-  const playerSelect = (x) => {
-    x = prompt("What is your choice?");
-    return x.toLowerCase();
-  };
-  const computerSelect = (comp) => {
-    comp = randomComputer();
-    return comp;
-  };
   if (computerSelect === "rock" && playerSelect === "rock") {
     return "its a draw!";
   } else if (computerSelect === "paper" && playerSelect === "paper") {
@@ -55,5 +40,5 @@ function playRound(playerSelect, computerSelect) {
   } else if (computerSelect === "scissors" && playerSelect === "paper") {
     return "you lose, scissors beats paper!";
   }
-  return;
 }
+console.log(playRound(playerSelect, computerSelect));
