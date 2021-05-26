@@ -11,13 +11,12 @@ if computer choice is "choice" and player choice is "choice",
 then return message :
 */
 
+// Work only with the console, will see later for a graphic version... let practice more and more JavaScript first...
+
 function randomComputer() {
   const rockPaperScissors = ["rock", "paper", "scissors"];
   return rockPaperScissors[Math.floor(Math.random() * 3)];
 } // Function for random choice
-
-// const pS = prompt("Type your choice");
-// console.log(pS);
 
 const game = () => {
   for (let i = 0; i < 5; i++) {
